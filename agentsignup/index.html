@@ -12,22 +12,195 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container custom-con">
+        <div class="registration form">
+            <h3>Your details have been sent successfully!!</h3>
+            <p style="margin-top: 8px;">You'll contacted by Admin soon via your Registered Email.</p>
+            <button class="button"><a href="../index.html">Go to Home</a></button>
+        </div>
+    </div>
+    <div class="container custom-con2">
         <div class="registration form">
             <header>Signup</header>
             <form action="#">
-                <input type="text" placeholder="Enter your email">
-                <input type="password" placeholder="Create a password">
-                <input type="password" placeholder="Confirm your password">
-                <input type="button" class="button" value="Signup">
+                <input type="text" id="mail" placeholder="Enter your email" autocomplete="false">
+                <input type="password" id="pass" placeholder="Create a password">
+                <input type="password" id="confirmPass" placeholder="Confirm your password">
+                <input type="button" onclick="sendData()" class="button" value="Signup">
             </form>
             <div class="signup">
                 <span class="signup">Already have an account?
-                    <label for="check">Login</label>
+                    <a href="../agentlogin/">Login</a>
                 </span>
             </div>
         </div>
     </div>
+
+    <style>
+        /* The snackbar - position it at the bottom and in the middle of the screen */
+        #snackbar {
+            visibility: hidden;
+            /* Hidden by default. Visible on click */
+            min-width: 250px;
+            /* Set a default minimum width */
+            margin-left: -125px;
+            /* Divide value of min-width by 2 */
+            background-color: #333;
+            /* Black background color */
+            color: #fff;
+            /* White text color */
+            text-align: center;
+            /* Centered text */
+            border-radius: 2px;
+            /* Rounded borders */
+            padding: 16px;
+            /* Padding */
+            position: fixed;
+            /* Sit on top of the screen */
+            z-index: 1;
+            /* Add a z-index if needed */
+            left: 50%;
+            /* Center the snackbar */
+            bottom: 30px;
+            /* 30px from the bottom */
+        }
+
+        /* Show the snackbar when clicking on a button (class added with JavaScript) */
+        #snackbar.show {
+            visibility: visible;
+            /* Show the snackbar */
+            /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        /* Animations to fade the snackbar in and out */
+        @-webkit-keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+    </style>
+    <div id="snackbar"></div>
+
+    <script>
+        function toast(innerText) {
+            // Get the snackbar DIV
+            var x = document.getElementById("snackbar");
+            x.innerHTML = innerText;
+            // Add the "show" class to DIV
+            x.className = "show";
+
+            // After 3 seconds, remove the show class from DIV
+            setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+        }
+
+        async function sendData() {
+            let mail = document.getElementById("mail");
+            let pass = document.getElementById("pass");
+            let confirmPass = document.getElementById("confirmPass");
+
+            if (mail.value == "" || mail.value == null) {
+                toast("Please enter a valid email address!");
+                mail.focus();
+                return;
+            } else if (pass.value == "" || pass.value == null) {
+                toast("Please enter a valid password!");
+                pass.focus();
+                return;
+            } else if (confirmPass.value == "" || confirmPass.value == null) {
+                toast("Please confirm your password!");
+                confirmPass.focus();
+                return;
+            } else if (confirmPass.value != pass.value) {
+                toast("Passwords do not match!!");
+                return;
+            }
+
+            var payload = {
+                Mail: mail.value,
+                Password: pass.value
+            };
+
+            let data = JSON.stringify(payload);
+
+            try {
+                let res = await fetch("http://localhost:5000/newUser", {
+                    method: "POST",
+                    headers: {
+                        'Accept': 'application/json, text/plain, */*',
+                        'Content-Type': 'application/json'
+                    },
+                    body: data
+                });
+
+                if (res.status === 409) {
+                    // Handle conflict (duplicate email) error
+                    let responseJSON = await res.json();
+                    console.error(responseJSON.message);
+                    toast("Email already exists.");
+                } else if (res.ok) {
+                    // Successful response
+                    let responseJSON = await res.json();
+                    console.log(responseJSON);
+                    toast("Data sent successfully!");
+                    document.getElementsByClassName("custom-con")[0].style.display = "unset";
+                    document.getElementsByClassName("custom-con2")[0].style.display = "none";
+                } else {
+                    // Handle other errors
+                    console.error("Error:", res.status, res.statusText);
+                    toast("Error sending data.");
+                }
+            } catch (error) {
+                // Handle network or other errors
+                console.error("Error:", error);
+                toast("Error sending data.");
+            }
+        }
+    </script>
 </body>
 
 </html>
