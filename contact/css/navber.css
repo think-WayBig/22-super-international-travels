@@ -5,6 +5,7 @@
     background-color: transparent;
 }
 
+
 .topbar-list {
     padding: 0;
     margin-bottom: 0
@@ -45,7 +46,6 @@
 .topbar-list li a:hover {
     color: #000;
 }
-
 .topbar-list li i {
     color: var(--white-color);
     padding-left: 5px;
@@ -173,7 +173,24 @@
     width: 100%;
     z-index: 9999;
 }
-
+.main_header_arae_two {
+    position: initial;
+    width: 100%;
+    z-index: 9999;
+}
+/* .main_header_arae_two .main-navbar .navbar .navbar-nav .nav-item a:before {
+    content: "";
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    position: absolute;
+    left: auto;
+    right: 0;
+    z-index: -1;
+    -webkit-transition: width .5s cubic-bezier(.25, .8, .25, 1) 0s;
+    transition: width .5s cubic-bezier(.25, .8, .25, 1) 0s;
+    background: #333;
+} */
 .main-navbar {
     padding: 12px 0;
     position: relative
@@ -522,6 +539,8 @@
     transition: var(--transition);
     color: var(--white-color)
 }
+
+
 
 .main-navbar .navbar .others-options .option-item .search-box i:hover {
     color: var(--white-color);
@@ -1419,3 +1438,13 @@
 .mean-menu {
     justify-content: space-between;
 }
+
+
+
+
+
+
+
+
+
+

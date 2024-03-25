@@ -32,6 +32,9 @@
         });
     })
 
+    // wow js 
+    new WOW().init();
+
     // Banner Slider
     $('.home_two_banner_slider_wrapper').owlCarousel({
         loop: true,
@@ -41,6 +44,55 @@
         dots: false,
         nav: true,
         navText: ["<i class='fas fa-arrow-left'></i>", "<i class=' fas fa-arrow-right' ></i>"],
+        responsive: {
+            0: {
+                items: 1
+            },
+            360: {
+                items: 1
+            },
+            600: {
+                items: 1
+            },
+            1000: {
+                items: 1
+            }
+        }
+    });
+    // home six banner slider
+    $('.home_six_banner_slider_wrapper').owlCarousel({
+        loop: true,
+        autoplay: false,
+        autoplayTimeout: 4000,
+        animateOut: 'slideOutLeft',
+        dots: true,
+        nav: true,
+        navText: ["<i class='fas fa-arrow-up'></i>", "<i class=' fas fa-arrow-down' ></i>"],
+        responsive: {
+            0: {
+                items: 1
+            },
+            360: {
+                items: 1
+            },
+            600: {
+                items: 1
+            },
+            1000: {
+                items: 1
+            }
+        }
+    });
+
+     // Banner ten Slider
+     $('.home_ten_banner_slider_wrapper').owlCarousel({
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 4000,
+        smartSpeed: 1000,
+        navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"],
+        dots: false,
+        nav: true,
         responsive: {
             0: {
                 items: 1
@@ -336,6 +388,399 @@
             },
             1200: {
                 items: 8
+            }
+        }
+    });
+    // partner_slider_area_twelve Slider
+    $('.partner_slider_area_twelve').owlCarousel({
+        loop: true,
+        dots: false,
+        autoplayHoverPause: true,
+        autoplay: true,
+        smartSpeed: 1000,
+        margin: 10,
+        nav: true,
+        navText: ["<i class='fas fa-arrow-left'></i>", "<i class=' fas fa-arrow-right' ></i>"],
+        responsive: {
+            0: {
+                items: 2,
+            },
+            768: {
+                items: 4,
+            },
+            992: {
+                items: 4,
+            },
+            1200: {
+                items: 8
+            }
+        }
+    });
+// Home-five nearby destination slider 
+    $('.destination_five_slider').owlCarousel({
+        loop: true,
+        dots: false,
+        autoplayHoverPause: true,
+        autoplay: true,
+        smartSpeed: 1000,
+        margin: 30,
+        nav: true,
+        navText: ["<i class='fas fa-arrow-left'></i>", "<i class=' fas fa-arrow-right' ></i>"],
+        responsive: {
+            0: {
+                items: 1,
+            },
+            768: {
+                items: 2,
+            },
+            992: {
+                items: 3,
+            },
+            1399: {
+                items: 3
+            },
+            1400: {
+                items: 4
+            }
+        }
+    });
+// Home-six top tour slider 
+    $('.top_tour_six_slider').owlCarousel({
+        loop: true,
+        dots: true,
+        autoplayHoverPause: true,
+        autoplay: false,
+        smartSpeed: 1000,
+        margin: 30,
+        nav: false,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            768: {
+                items: 2,
+            },
+            992: {
+                items: 3,
+            },
+            1399: {
+                items: 3
+            },
+            1400: {
+                items: 4
+            }
+        }
+    });
+// Home-eleven top tour slider 
+    $('.top_tour_eleven_slider').owlCarousel({
+        loop: true,
+        dots: true,
+        autoplayHoverPause: true,
+        autoplay: false,
+        smartSpeed: 1000,
+        margin: 30,
+        nav: false,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            768: {
+                items: 2,
+            },
+            992: {
+                items: 3,
+            },
+            1399: {
+                items: 3
+            },
+            1400: {
+                items: 4
+            }
+        }
+    });
+// Home-six news slider 
+    $('.home_six_news_slider_wrapper').owlCarousel({
+        loop: true,
+        dots: true,
+        autoplayHoverPause: true,
+        autoplay: false,
+        smartSpeed: 1000,
+        margin: 30,
+        nav: false,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            800: {
+                items: 2,
+            },
+            1200: {
+                items: 3,
+            }
+        }
+    });
+// home six testimonial area 
+
+    $('.testimonial-slider-wrapper').owlCarousel({
+        loop: true,
+        autoplayHoverPause: true,
+        autoplay: false,
+        smartSpeed: 1000,
+        dots: true,
+        nav: false,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            600: {
+                items: 1,
+            },
+            1000: {
+                items: 1,
+            }
+        }
+    });
+
+    // home seven trending tour area 
+    $('.trending_tour_seven_slider').owlCarousel({
+        loop: true,
+        dots: true,
+        autoplayHoverPause: true,
+        autoplay: false,
+        smartSpeed: 1000,
+        margin: 30,
+        nav: false,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            768: {
+                items: 2,
+            },
+            992: {
+                items: 3,
+            },
+            1399: {
+                items: 3
+            },
+            1400: {
+                items: 4
+            }
+        }
+    });
+
+    //  home seven client feedback slider
+
+    $('.client_feedback_slider').owlCarousel({
+        loop: true,
+        autoplayHoverPause: true,
+        autoplay: false,
+        smartSpeed: 1000,
+        dots: true,
+        margin: 30,
+        nav: false,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            800: {
+                items: 2,
+            },
+            1200: {
+                items: 3,
+            }
+        }
+    });
+
+    // home eight popular destination slider
+        $('.popular_tours_eight_slider').owlCarousel({
+            loop: true,
+            dots: false,
+            autoplayHoverPause: true,
+            autoplay: true,
+            smartSpeed: 1000,
+            margin: 30,
+            nav: true,
+            navText: ["<i class='fas fa-arrow-left'></i>", "<i class=' fas fa-arrow-right' ></i>"],
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                768: {
+                    items: 2,
+                },
+                992: {
+                    items: 3,
+                },
+                1399: {
+                    items: 3
+                },
+                1400: {
+                    items: 4
+                }
+            }
+        });
+    // home ten country slider
+        $('.country_slider_wrapper').owlCarousel({
+            loop: true,
+            dots: true,
+            autoplayHoverPause: true,
+            autoplay: true,
+            smartSpeed: 1000,
+            margin: 30,
+            nav: false,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                768: {
+                    items: 2,
+                },
+                992: {
+                    items: 3,
+                },
+                1399: {
+                    items: 3
+                },
+                1400: {
+                    items: 4
+                }
+            }
+        });
+    // home ten immigration_slider
+        $('.immigration_slider_wrapper').owlCarousel({
+            loop: true,
+            dots: true,
+            autoplayHoverPause: true,
+            autoplay: true,
+            smartSpeed: 1000,
+            margin: 30,
+            nav: false,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                768: {
+                    items: 2,
+                },
+                992: {
+                    items: 3,
+                },
+                1399: {
+                    items: 3
+                },
+                1400: {
+                    items: 4
+                }
+            }
+        });
+
+          //home eleven testimonial Slider
+    $('.testimonial_eleven_slider_wrapper').owlCarousel({
+        loop: true,
+        autoplayHoverPause: true,
+        autoplay: true,
+        smartSpeed: 1000,
+        dots: false,
+        nav: true,
+        responsiveClass: true,
+        navText: [
+            "<i class='fas fa-arrow-left'></i>",
+            "<i class='fas fa-arrow-right'></i>"
+        ],
+        responsive: {
+            0: {
+                items: 1,
+            },
+            600: {
+                items: 1,
+            },
+            1000: {
+                items: 1,
+            }
+        }
+    });
+    // testimonial_thirteen_slider_wrapper
+    $('.testimonial_thirteen_slider_wrapper').owlCarousel({
+        loop: true,
+        autoplayHoverPause: true,
+        autoplay: true,
+        smartSpeed: 1000,
+        dots: false,
+        nav: true,
+        responsiveClass: true,
+        navText: [
+            "<i class='fas fa-arrow-left'></i>",
+            "<i class='fas fa-arrow-right'></i>"
+        ],
+        responsive: {
+            0: {
+                items: 1,
+            },
+            600: {
+                items: 1,
+            },
+            1000: {
+                items: 1,
+            }
+        }
+    });
+
+    // home twelve country slider
+    $('.top_country_slider_wrapper').owlCarousel({
+        loop: true,
+        dots: false,
+        autoplayHoverPause: true,
+        autoplay: true,
+        smartSpeed: 1000,
+        margin: 30,
+        nav: true,
+        navText: [
+            "<i class='fas fa-arrow-left'></i>",
+            "<i class='fas fa-arrow-right'></i>"
+        ],
+        responsive: {
+            0: {
+                items: 1,
+            },
+            768: {
+                items: 2,
+            },
+            992: {
+                items: 3,
+            },
+            1399: {
+                items: 4,
+            },
+            1400: {
+                items: 6
+            }
+        }
+    });
+    // home fourteen tour category slider
+    $('.tour_category_fourteen_slider').owlCarousel({
+        loop: true,
+        dots: false,
+        autoplayHoverPause: true,
+        autoplay: true,
+        smartSpeed: 1000,
+        margin: 10,
+        nav: true,
+        navText: ["<i class='fas fa-arrow-left'></i>", "<i class=' fas fa-arrow-right' ></i>"],
+        responsive: {
+            0: {
+                items: 1,
+            },
+            768: {
+                items: 2,
+            },
+            992: {
+                items: 3,
+            },
+            1200: {
+                items: 4
             }
         }
     });
